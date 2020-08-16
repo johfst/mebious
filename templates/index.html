@@ -1,0 +1,64 @@
+<html>
+    <head>
+    
+        <title>Mebious</title>
+        <link rel="stylesheet" href='{{ url_for("static", filename="main.css") }}'>
+
+    </head>
+
+    <body>
+
+        <div class="inputdiv">
+            <form method="POST" class="inputform" action="">
+                {{ intextform.csrf_token }}
+                {{ intextform.inputtext(class_="inputbox") }}
+                {{ intextform.submit(class_="inputbutton") }}
+
+            </form>
+        </div>
+        <div class="inputdiv">
+            <form method="POST" class="inputform" enctype="multipart/form-data">
+                {{ inimageform.csrf_token }}
+                {{ inimageform.inputimage(class_="inputbox") }}
+                {{ inimageform.submit(class_="inputbutton") }}
+                <!--
+                <input type="file" class="inputbox" name="inimage" required>
+                <input type="submit" class="inputbutton" value="in_img">
+                -->
+            </form>
+        </div>
+
+        <div id="main">
+            <div id="text">
+                {% for item in textitems %}
+                <div class="textitem" style="
+                    color: {{ item['color'] }};
+                    font-family: {{ item['font'] }};
+                    font-weight: {{ item['font-weight'] }};
+                    font-size: {{ item['size'] }};
+                    left: {{ item['left'] }};
+                    ">{{ item['text'] }}</div>
+                {% endfor %}
+            </div>
+
+             <div id="images">
+                {% for item in imageitems %}
+                <div class="imageitem" style="
+                    filter: alpha(opacity={{ item['opacity'] }});
+                    -moz-opacity: {{ item['opacity'] / 100.0 }};
+                    opacity: {{ item['opacity'] / 100.0 }};
+                    width: {{ item['width'] }};
+                    height: {{ item['height'] }};
+                    left: {{ item['left'] }}%;
+                    top: {{ item['top'] }}%;
+                    ">
+                    <img src="{{ item['imagepath'] }}"
+                         width="{{ item['width'] }}" height="{{ item['height'] }}"></div>
+                {% endfor %}
+             </div>
+
+        </div>
+
+    </body>
+
+</html>

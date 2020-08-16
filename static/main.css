@@ -1,0 +1,69 @@
+body {
+    background: black;
+    font-size: 20px;
+    color: green;
+    font-family: Courier;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.inputdiv {
+    display: inline-block;
+    z-index: 30;
+}
+
+.inputform {
+    margin: 5px 5px 5px 5px;
+    /*padding: 1px 1px 1px 1px;*/
+    border: 1px solid #004400;
+}
+
+.inputbox {
+    width: 400;
+    min-width: 80;
+    padding: 1px 1px;
+    box-sizing: border-box;
+    border: 1px solid green;
+    background-color: black;
+    color: #00ff00;
+    margin: 5px 5px 5px 5px;
+}
+
+.inputbutton {
+    background-color: black;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    padding: 1px 1px;
+    margin: 5px 5px;
+}
+
+.textitem {
+    position: relative;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    z-index: 20;
+}
+
+.imageitem {
+    position: absolute;
+    padding: 0px 0px;
+    margin: 0px 0px;
+}
+
+#text {
+    position: absolute;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    width: 70%;
+}
+
+#images {
+    position: relative;
+    z-index: 10;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    width: 70%;
+    height: 60%;
+}
+
